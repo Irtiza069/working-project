@@ -1,0 +1,77 @@
+.animated-form {
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  .animated-input {
+    transition: all 0.3s ease;
+  }
+  
+  .animated-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  
+  textarea.animated-input {
+    resize: vertical;
+    min-height: 150px; /* Make the textarea larger */
+  }
+  
+  .animated-text {
+    animation: fadeIn 0.5s;
+  }
+  
+  .animated-button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animated-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  /* Animated button ripple effect */
+  .animated-button::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: scale(0);
+  }
+  
+  .animated-button:hover::after {
+    opacity: 1;
+    transform: scale(3);
+  }
+  
+  /* Keyframes for animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  table th {
+    border: 1px solid black;
+  }

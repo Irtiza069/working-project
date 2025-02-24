@@ -1,0 +1,37 @@
+/* Section Styling */
+.body
+ {
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 40px 20px; /* Additional padding */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Title Styling */
+.title {
+    font-weight: bold; /* Bold text */
+    color: #343a40; /* Dark color for the title */
+    margin-bottom: 20px; /* Space below title */
+}
+.h1{
+    text-align: center;
+}
+/* Subtitle Styling */
+.subtitle {
+    font-size: 1.2rem; /* Slightly larger font size */
+    color: #6c757d; /* Muted color for subtitle */
+    margin-bottom: 20px; /* Space below subtitle */
+}
+
+/* Paragraph Styling */
+p {
+    line-height: 1.6; /* Improved line spacing */
+}
+
+/* Hover Effect for Image */
+.img-fluid {
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.img-fluid:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}

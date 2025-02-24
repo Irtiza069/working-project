@@ -1,0 +1,49 @@
+{
+  "ffs": [
+    {
+      "id": "09e6",
+      "firstName": "eee",
+      "lastName": "aaaa",
+      "username": "aa",
+      "email": "aaa",
+      "city": "aa",
+      "zip": "22323",
+      "isTerm": "Islamabad"
+    },
+    {
+      "id": "e31e",
+      "firstName": "eee",
+      "lastName": "aaaa",
+      "username": "aa",
+      "email": "aaa@gmail.com",
+      "city": "aa",
+      "zip": "22323",
+      "isTerm": "Islamabad"
+    },
+    {
+      "id": "0cf4",
+      "firstName": "sarfaraz",
+      "lastName": "sasas",
+      "username": "sarfaraz",
+      "email": "aaa@gmail.com",
+      "city": "sddsds",
+      "zip": "12233",
+      "isTerm": "Rawalpindi"
+    }
+  ],
+  "login": [
+    {
+      "id": "fae9"
+    },
+    {
+      "id": "28e6",
+      "name": "Shilajit",
+      "Password": "ssas"
+    },
+    {
+      "id": "a986",
+      "name": "Shilajit",
+      "Password": "asas"
+    }
+  ]
+}

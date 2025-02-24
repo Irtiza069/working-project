@@ -1,0 +1,77 @@
+/* Card Animation */
+.animated-card {
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .animated-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Image Animation */
+  .animated-img {
+    transition: transform 0.5s ease, filter 0.3s;
+  }
+  
+  .animated-card:hover .animated-img {
+    transform: scale(1.1);
+    filter: brightness(90%);
+  }
+  
+  /* Iframe Animation */
+  .animated-iframe {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .animated-card:hover .animated-iframe {
+    transform: scale(1.02);
+  }
+  
+  /* Card Text Animation */
+  .card-body {
+    transition: opacity 0.3s ease;
+  }
+  
+  .animated-card:hover .card-body {
+    opacity: 0.9;
+  }
+  
+  /* Keyframes for entrance animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animated-card {
+    animation: fadeInUp 0.5s ease-in-out;
+  }
+  
+  /* Ripple Effect for Button Animations */
+  .animated-card::before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s, transform 0.5s;
+    transform: scale(0);
+  }
+  
+  .animated-card:hover::before {
+    opacity: 1;
+    transform: scale(3);
+  }
+  

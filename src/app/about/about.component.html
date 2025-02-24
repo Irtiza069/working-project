@@ -1,0 +1,31 @@
+<div class="body">
+    <section class="my-5">
+        <app-alert  [alertype]="'success'" [message]="'Welcome to about Component'"></app-alert>
+        <div class="container mt-5">
+           <h1 class="h1">
+            <p>Total: {{ amount | currency }}</p>
+            <img [src]="imageUrl" alt="Angular Logo">
+           </h1>
+            <!-- Centered Image -->
+            <div class="text-center my-5">
+                <img src="./pics/web_pic.png" alt="centered image" class="img-fluid animated-image">
+            </div>
+            <h1 class="title text-center">Hello, my name is Jamshed Ali</h1>  
+            <!-- Left-aligned Bold and Italicized Paragraph -->
+            <h4 class="mt-4 text-start col-12 my-2 subtitle">
+                <i>"I am a Frontend Developer with a focus on integrating Quantitative UX, leveraging modern JavaScript frameworks, UI/UX principles, and performance optimization techniques to create seamless, interactive, and user-friendly web applications. I specialize in building responsive and accessible interfaces, utilizing data visualization, component-based architectures, and real-time interactions to enhance user experience through data-driven design."</i>
+            </h4>
+    
+            <!-- Two Left-aligned Simple Dummy Paragraphs -->
+            <p class="text-start">
+                This is a simple dummy paragraph. You can replace this text with actual content later. It serves as placeholder text to help visualize the structure of your content.
+            </p>
+            <p class="text-start">
+                This is another simple dummy paragraph. Like the previous one, this is meant to be replaced with actual content when needed.
+            </p>
+        </div>
+    </section>
+</div>
+<div>
+    <app-contact [showAlert]="false"></app-contact>
+</div>

@@ -1,0 +1,270 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<div class="container mt-5">
+  <app-alert     *ngIf="showAlert"
+  [alertype]="'Warning'" [message]="'Welcome to Contact Component'"></app-alert>
+  <form
+    class="row g-3 needs-validation animate__animated animate__fadeIn"
+    novalidate
+  >
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">First name</label>
+      <input
+        type="text"
+        name="firstName"
+        #firstName="ngModel"
+        [(ngModel)]="studentobj.firstName"
+        class="form-control shadow-sm"
+        id="validationCustom01"
+        required
+        minlength="3"
+      />
+      <div class="text-danger mt-1">
+        @if((firstName.touched || firstName.dirty) && firstName.errors?.['required']) {
+        <span class="animate__animated animate__shakeX">This is required</span>
+        } @else if((firstName.touched || firstName.dirty) && firstName.errors?.['minlength']) {
+        <span class="animate__animated animate__shakeX">Min 3 char required</span>
+        }
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input
+        type="text"
+        name="lastName"
+        #lname="ngModel"
+        [(ngModel)]="studentobj.lastName"
+        class="form-control shadow-sm"
+        id="validationCustom02"
+        required
+      />
+      <div class="text-danger mt-1">
+        @if((lname.touched || lname.dirty) && lname.errors?.['required']) {
+        <span class="animate__animated animate__shakeX">This is required</span>
+        }
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustomEmail" class="form-label">Email</label>
+      <input
+        type="email"
+        name="email"
+        #email="ngModel"
+        [(ngModel)]="studentobj.email"
+        class="form-control shadow-sm"
+        id="validationCustomEmail"
+        required
+        email
+      />
+      <div class="text-danger mt-1">
+        @if((email.touched || email.dirty) && email.errors?.['required']) {
+        <span class="animate__animated animate__shakeX">This is required</span>
+        } @else if((email.touched || email.dirty) && email.errors?.['email']) {
+        <span class="animate__animated animate__shakeX">Invalid email address</span>
+        }
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Username</label>
+      <div class="input-group has-validation">
+        <input
+          type="text"
+          name="username"
+          #uname="ngModel"
+          [(ngModel)]="studentobj.username"
+          class="form-control shadow-sm"
+          id="validationCustomUsername"
+          required
+        />
+        <div class="text-danger mt-1">
+          @if((uname.touched || uname.dirty) && uname.errors?.['required']) {
+          <span class="animate__animated animate__shakeX">This is required</span>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input
+        type="text"
+        name="city"
+        #city="ngModel"
+        [(ngModel)]="studentobj.city"
+        class="form-control shadow-sm"
+        id="validationCustom03"
+        required
+      />
+      <div class="text-danger mt-1">
+        @if((city.touched || city.dirty) && city.errors?.['required']) {
+        <span class="animate__animated animate__shakeX">This is required</span>
+        }
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">State</label>
+      <select
+        class="form-select shadow-sm"
+        name="isTerm"
+        #state="ngModel"
+        [(ngModel)]="studentobj.isTerm"
+        id="validationCustom04"
+        required
+      >
+        <option selected disabled value="">Choose...</option>
+        <option>Islamabad</option>
+        <option>Rawalpindi</option>
+      </select>
+      <div class="text-danger mt-1">
+        @if((state.touched || state.dirty) && state.errors?.['required']) {
+        <span class="animate__animated animate__shakeX">This is required</span>
+        }
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Zip</label>
+      <input
+        type="text"
+        name="zip"
+        #zip="ngModel"
+        [(ngModel)]="studentobj.zip"
+        class="form-control shadow-sm"
+        id="validationCustom05"
+        required
+      />
+      <div class="text-danger mt-1">
+        @if((zip.touched || zip.dirty) && zip.errors?.['required']) {
+        <span class="animate__animated animate__shakeX">This is required</span>
+        }
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input
+          class="form-check-input shadow-sm"
+          type="checkbox"
+          name="isterm"
+          #terms="ngModel"
+          [(ngModel)]="studentobj.isTerm"
+          id="invalidCheck"
+          required
+        />
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="text-danger mt-1">
+          @if((terms.touched || terms.dirty) && terms.errors?.['required']) {
+          <span class="animate__animated animate__shakeX">You must agree</span>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button
+        class="btn btn-dark shadow m-5 animate__animated animate__pulse"
+        type="button"
+        (click)="onSub()"
+      >
+        Reset form
+      </button>
+      <button
+        class="btn btn-primary shadow animate__animated animate__pulse"
+        type="button"
+        (click)="onSubmit()"
+      >
+        Submit form
+      </button>
+    
+    </div>
+  </form>
+</div>
+<div class="container">
+  <div class="col-12">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Zip</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Use *ngFor to loop through the data array -->
+          <tr *ngFor="let item of data">
+            <!-- Editable fields -->
+            <td>
+              <ng-container *ngIf="editingRowId === item.id; else viewModeFirstName">
+                <input [(ngModel)]="item.firstName" />
+              </ng-container>
+              <ng-template #viewModeFirstName>{{ item.firstName }}</ng-template>
+            </td>
+            <td>
+              <ng-container *ngIf="editingRowId === item.id; else viewModeLastName">
+                <input [(ngModel)]="item.lastName" />
+              </ng-container>
+              <ng-template #viewModeLastName>{{ item.lastName }}</ng-template>
+            </td>
+            <td>
+              <ng-container *ngIf="editingRowId === item.id; else viewModeUsername">
+                <input [(ngModel)]="item.username" />
+              </ng-container>
+              <ng-template #viewModeUsername>{{ item.username }}</ng-template>
+            </td>
+            <td>
+              <ng-container *ngIf="editingRowId === item.id; else viewModeEmail">
+                <input [(ngModel)]="item.email" />
+              </ng-container>
+              <ng-template #viewModeEmail>{{ item.email }}</ng-template>
+            </td>
+            <td>
+              <ng-container *ngIf="editingRowId === item.id; else viewModeCity">
+                <input [(ngModel)]="item.city" />
+              </ng-container>
+              <ng-template #viewModeCity>{{ item.city }}</ng-template>
+            </td>
+            <td>
+              <ng-container *ngIf="editingRowId === item.id; else viewModeZip">
+                <input [(ngModel)]="item.zip" />
+              </ng-container>
+              <ng-template #viewModeZip>{{ item.zip }}</ng-template>
+            </td>
+            <td>
+              <!-- Actions -->
+              <ng-container *ngIf="editingRowId === item.id; else viewActions">
+                <button class="btn btn-success btn-sm" (click)="onSave(item)">
+                  Save
+                </button>
+                <button class="btn btn-secondary btn-sm" (click)="onCancel()">
+                  Cancel
+                </button>
+              </ng-container>
+              <ng-template #viewActions>
+                <button class="btn btn-primary btn-sm" (click)="onEdit(item)">
+                  Edit
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="onDelete(item)">
+                  Delete
+                </button>
+              </ng-template>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

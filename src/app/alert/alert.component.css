@@ -1,0 +1,81 @@
+/* Base alert styling */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.5s ease-out forwards;
+}
+
+/* Success alert */
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+/* Warning alert */
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+}
+
+/* Danger alert */
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Close button (optional) */
+.alert .close {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: inherit;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.alert .close:hover {
+    opacity: 1;
+}
+
+/* Animation for fading in and sliding down */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Add a hover effect */
+.alert:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.alert.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}

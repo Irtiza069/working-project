@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <form class="p-4 border rounded shadow-sm bg-light" [formGroup]="studentform">
+      <h4 class="mb-4 text-center">Simple Form</h4>
+      <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" placeholder="First name" formControlName="firstName" required>
+        <div class="invalid-feedback">Please enter your first name.</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input type="text"  formControlName="lastName"  placeholder="Last name" required>
+        <div class="invalid-feedback">Please enter your last name.</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" formControlName="userName"  placeholder="Username" required>
+        <div class="invalid-feedback">Please choose a username.</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">City</label>
+        <input type="text" class="form-control" formControlName="city"  placeholder="City" required>
+        <div class="invalid-feedback">Please provide a valid city.</div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">State</label>
+          <input type="text" class="form-control" formControlName="state"  placeholder="State" required>
+          <div class="invalid-feedback">Please provide a valid state.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Zip</label>
+          <input type="text" class="form-control" formControlName="zipcode"  placeholder="Zip" required>
+          <div class="invalid-feedback">Please provide a valid zip.</div>
+        </div>
+      </div>
+      <div class="form-check my-3">
+        <input class="form-check-input" formControlName="isacceptTerm"  type="checkbox" required>
+        <label class="form-check-label">Agree to terms and conditions</label>
+        <div class="invalid-feedback">You must agree before submitting.</div>
+      </div>
+      <button class="btn btn-primary w-100" (click)="onsave()" >Submit Form</button>
+    </form>
+    <h1>{{formvalue}}</h1>
+  </div>
+  
